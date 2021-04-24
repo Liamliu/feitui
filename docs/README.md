@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /img/hero.png
-heroText: 飞腿
-tagline: 页面装修编辑拖拉拽，赋予小程序页面装修功能
+heroText: 飞腿小程序编辑器
+tagline: 页面装修编辑拖拉拽，赋予小程序页面装修能力
 actionText: 快速上手 →
 actionLink: /guide/
 features:
@@ -15,4 +15,12 @@ features:
 footer: Copyright © 2021 FeiTui
 ---
 
-### 测试
+## 适用场景
+
+1. 给现有小程序增加页面装修功能
+
+2. 快速生成小程序，根据模块库，托拉拽快速组合小程序
+
+-   除了官方提供的基础模块库，还可以自行扩展模块库，发布到 dcloud 插件市场。
+
+3. 更多好玩场景
