@@ -198,3 +198,4 @@ export default {
 ## 更新计划
 + <el-checkbox :value="false">底部TabBar模块实现</el-checkbox> 
 + <el-checkbox :value="false">模板库</el-checkbox> 
++ <el-checkbox :value="false">可嵌套的容器模块</el-checkbox> 
