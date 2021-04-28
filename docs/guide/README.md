@@ -199,3 +199,5 @@ export default {
 + <el-checkbox :value="false">底部TabBar模块实现</el-checkbox> 
 + <el-checkbox :value="false">模板库</el-checkbox> 
 + <el-checkbox :value="false">可嵌套的容器模块</el-checkbox> 
++ <el-checkbox :value="false">媒体库增加分类功能</el-checkbox> 
++ <el-checkbox :value="false">增加富文本模块</el-checkbox> 
