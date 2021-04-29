@@ -20,6 +20,9 @@ H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持
 `pages.json`
 
 ```json
+"easycom": {
+        "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+},
 {
 	"pages": [
         {
