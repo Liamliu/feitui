@@ -4,8 +4,22 @@
 ## 它是如何工作的?
 模块：飞腿编辑器中的模块是用于构建内容交互的抽象单元。把它们组合到一起成为页面。
 数据格式：当保存时、界面上的模块会序列化成JSON格式的数据，小程序端渲染时会解析这些JSON数据，形成界面上组件。现有的模块无法满足需求的情况下，可以方便的扩展开发出自己的业务模块。
+通过后台飞腿页面编辑器完成好页面设计后，小程序端即时渲染出来。
 
 H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持动态组件，小程序采用模板判断的方式加载，得益于uni-app的条件编译，针对不同的平台做不同的处理。
+
+### 飞腿各个插件关系
+![插件关系图](https://7463-tcb-t7majhaj7f9deq783e55e-4b6d42-1305631837.tcb.qcloud.la/feitui/feitui-editor.png)
+
+对于各个插件的链接：
+* [uniCloud admin](https://ext.dcloud.net.cn/plugin?id=3268)
+* [飞腿页面编辑器插件](https://ext.dcloud.net.cn/plugin?id=4877)
+* [飞腿基础模块库](https://ext.dcloud.net.cn/plugin?id=4864)
+* [示例自定义扩展模块](https://ext.dcloud.net.cn/plugin?id=4865)
+* [媒体库插件](https://ext.dcloud.net.cn/plugin?id=4756)
+* [飞腿小程序](https://ext.dcloud.net.cn/plugin?id=4879)
+
+> 说明：`uniCloud admin`是基础后台，安装 `飞腿页面编辑器插件` 后会自动安装 `飞腿基础模块库`,`示例自定义扩展模块`, `飞腿基础模块库` 和 `媒体库插件`。`飞腿小程序`是前端的项目模板，需要独立安装成另外的项目。
 
 ## 快速上手
 由于飞腿是采用[uniCloud admin 框架](https://uniapp.dcloud.io/uniCloud/admin)开发的一个插件，并且使用了[uni_modules插件规范](https://uniapp.dcloud.io/uni_modules), 安装和升级它就非常简单。
