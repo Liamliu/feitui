@@ -55,7 +55,7 @@ import editorPlugin from '@/uni_modules/feitui-editor/js_sdk/plugin';
 import mediaPlugin from '@/uni_modules/feitui-media/js_sdk/media';
 import '@/uni_modules/feitui-media/js_sdk/media.css'
 
-Vue.use(editorPlugin);
+Vue.use(editorPlugin, store);
 Vue.use(mediaPlugin);
 ```
 11. 在项目根目录的uni.scss中引入此文件。
@@ -63,59 +63,8 @@ Vue.use(mediaPlugin);
 /* uni.scss */
 @import 'uview-ui/theme.scss';
 ```
-12. 在项目根目录 `store/modules` 里新增editor.js
-```js
-/** editor.js */
-export default {
-    namespaced: true,
-    state: {
-        curEditBlock: {},
-        curPageData: {},
-        pages: {}
-    },
-    getters: {
-        getCurEditBlock: (state) => {
-            return state.curEditBlock;
-        },
-        getCurPageData: (state) => {
-            return state.curPageData;
-        },
-        getPages: (state) => {
-            return state.pages;
-        }
-    },
-    mutations: {
-        SET_CUR_EDIT_BLOCK: (state, block) => {
-            state.curEditBlock = Object.assign({}, block);
-        },
-        SET_CUR_PAGE_DATA: (state, pageData) => {
-            state.curPageData = Object.assign({}, pageData);
-        },
-        SET_PAGES: (state, pages) => {
-            state.pages = Object.assign({}, pages);
-        },
-    },
-    actions: {
-        SetCurEditBlock({
-            commit
-        }, block) {
-            commit('SET_CUR_EDIT_BLOCK', block);
-        },
-        SetCurPageData({
-            commit
-        }, pageData) {
-            commit('SET_CUR_PAGE_DATA', pageData);
-        },
-        SetPages({
-            commit
-        }, pages) {
-            commit('SET_PAGES', pages);
-        },
-    }
-}
-```    
-13. 运行项目到`Chrome`
-14. 运行起来uniCloud admin，菜单管理模块会自动读取插件文件中的菜单配置，生成【待添加菜单】，点击`添加选中的菜单`，然后激活即可
+12. 运行项目到`Chrome`
+13. 运行起来uniCloud admin，菜单管理模块会自动读取插件文件中的菜单配置，生成【待添加菜单】，点击`添加选中的菜单`，然后激活即可
 
 ## 开发扩展模块
 > 模块的组成
