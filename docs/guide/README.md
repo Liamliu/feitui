@@ -68,7 +68,7 @@ Vue.use(mediaPlugin);
 
 ## 开发扩展模块
 > 模块的组成
-以演示的自定义模块为例，目录结构如下：可参考 [自定义飞腿扩展模块演示]()
+以演示的自定义模块为例，目录结构如下：可参考 [自定义飞腿扩展模块演示](https://ext.dcloud.net.cn/plugin?id=4865)
 ```sh
 uni_modules
 ├── blocks
@@ -145,7 +145,7 @@ export default {
 
 
 ## 前端小程序(H5)
-前端小程序可以直接使用DCloud插件市场上的[飞腿前端小程序模板](), 也可根据自己的需求，自行拓展，并支持局部组件的方式调用模块，具体使用可参看项目模板。
+前端小程序可以直接使用DCloud插件市场上的[飞腿前端小程序模板](https://ext.dcloud.net.cn/plugin?id=4879), 也可根据自己的需求，自行拓展，并支持局部组件的方式调用模块，具体使用可参看项目模板。
 
 ## 更新计划
 + <el-checkbox :value="false">底部TabBar模块实现</el-checkbox> 
