@@ -162,7 +162,7 @@ export default {
 前端小程序可以直接使用DCloud插件市场上的[飞腿前端小程序模板](https://ext.dcloud.net.cn/plugin?id=4879), 也可根据自己的需求，自行拓展，并支持局部组件的方式调用模块，具体使用可参看项目模板。
 
 ## 更新计划
-+ <el-checkbox :value="false">底部TabBar模块实现</el-checkbox> 
++ <el-checkbox :value="true">底部TabBar模块实现(2021-05-04)</el-checkbox> 
 + <el-checkbox :value="false">模板库</el-checkbox> 
 + <el-checkbox :value="false">可嵌套的容器模块</el-checkbox> 
 + <el-checkbox :value="false">媒体库增加分类功能</el-checkbox> 
