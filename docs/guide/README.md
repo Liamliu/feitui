@@ -9,7 +9,7 @@
 H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持动态组件，小程序采用模板判断的方式加载，得益于uni-app的条件编译，针对不同的平台做不同的处理。
 
 ### 飞腿各个插件关系
-![插件关系图](https://7463-tcb-t7majhaj7f9deq783e55e-4b6d42-1305631837.tcb.qcloud.la/feitui/feitui-editor.png)
+![插件关系图](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-e7c457c2-15a4-46a2-a110-54c6ab02dd5c/018f4d56-b968-4704-bd44-0215405b7411.png)
 
 对于各个插件的链接：
 * [uniCloud admin](https://ext.dcloud.net.cn/plugin?id=3268)
@@ -18,8 +18,9 @@ H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持
 * [示例自定义扩展模块](https://ext.dcloud.net.cn/plugin?id=4865)
 * [媒体库插件](https://ext.dcloud.net.cn/plugin?id=4756)
 * [飞腿小程序](https://ext.dcloud.net.cn/plugin?id=4879)
+* [飞腿内容管理插件](https://ext.dcloud.net.cn/plugin?id=4969)
 
-> 说明：`uniCloud admin`是基础后台，安装 `飞腿页面编辑器插件` 后会自动安装 `飞腿基础模块库`,`示例自定义扩展模块`, `飞腿基础模块库` 和 `媒体库插件`。`飞腿小程序`是前端的项目模板，需要独立安装成另外的项目。
+> 说明：`uniCloud admin`是基础后台，安装 `飞腿页面编辑器插件` 后会自动安装 `飞腿基础模块库`,`示例自定义扩展模块`,`飞腿内容管理模块`, `飞腿基础模块库` 和 `媒体库插件`。`飞腿小程序`是前端的项目模板，需要独立安装成另外的项目。
 
 ## 快速上手
 由于飞腿是采用[uniCloud admin 框架](https://uniapp.dcloud.io/uniCloud/admin)开发的一个插件，并且使用了[uni_modules插件规范](https://uniapp.dcloud.io/uni_modules), 安装和升级它就非常简单。
@@ -38,21 +39,45 @@ H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持
         "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 },
 {
-	"pages": [
+    "pages": [
         {
             "path": "uni_modules/feitui-media/pages/MediaList",
             "style": {
                 "navigationBarTitleText": "媒体库"
             }
         },
-		{
+        {
             "path": "uni_modules/feitui-editor/pages/index",
             "style": {
                 "navigationBarTitleText": "页面管理"
             }
 
         },
-	]
+        {
+            "path" : "uni_modules/feitui-cms/pages/category/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "分类管理",
+                "enablePullDownRefresh": false
+            }
+
+        }
+        ,{
+            "path" : "uni_modules/feitui-cms/pages/post/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "文章管理",
+                "enablePullDownRefresh": false
+            }
+        },{
+            "path" : "uni_modules/feitui-cms/pages/post/edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑文章",
+                "enablePullDownRefresh": false
+            }
+        },
+    ]
 }
 ```
 7. 由于插件依赖的第三方组件，安装本插件时会安装这些依赖，如果没有装上，建议右键`/uni_modules/feitui-editor`安装一下第三方依赖，否则可能会出现一些问题
@@ -67,10 +92,14 @@ npm install uview-ui element-ui vuedraggable -S
 ```js
 import editorPlugin from '@/uni_modules/feitui-editor/js_sdk/plugin';
 import mediaPlugin from '@/uni_modules/feitui-media/js_sdk/media';
-import '@/uni_modules/feitui-media/js_sdk/media.css'
+import cmsPlugin from '@/uni_modules/feitui-cms/js_sdk/plugin';
+import '@/uni_modules/feitui-media/js_sdk/media.css';
 
 Vue.use(editorPlugin, store);
 Vue.use(mediaPlugin);
+Vue.use(cmsPlugin);
+
+Vue.prototype.$eventHub= Vue.prototype.$eventHub ||  new Vue();
 ```
 11. 在项目根目录的uni.scss中引入此文件。
 ```js
@@ -79,6 +108,15 @@ Vue.use(mediaPlugin);
 ```
 12. 运行项目到`Chrome`
 13. 运行起来uniCloud admin，菜单管理模块会自动读取插件文件中的菜单配置，生成【待添加菜单】，点击`添加选中的菜单`，然后激活即可
+
+## 常见问题
+* 提示文件查找失败 `core-js/library/fn/object/assign` 
+
+是因为本地的core-js使用了较高的版本，使用如下命令安装匹配的版本可解决
+
+```sh
+npm install core-js@2
+```
 
 ## 开发扩展模块
 > 模块的组成
@@ -163,6 +201,7 @@ export default {
 
 ## 更新计划
 + <el-checkbox :value="true">底部TabBar模块实现(2021-05-04)</el-checkbox> 
++ <el-checkbox :value="true">增加对内容管理模块的支持(2021-05-14)</el-checkbox> 
 + <el-checkbox :value="false">模板库</el-checkbox> 
 + <el-checkbox :value="false">可嵌套的容器模块</el-checkbox> 
 + <el-checkbox :value="false">媒体库增加分类功能</el-checkbox> 
