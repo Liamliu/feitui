@@ -41,9 +41,14 @@ H5端使用VUE动态组件的机制加载这些模块，由于小程序不支持
 {
     "pages": [
         {
-            "path": "uni_modules/feitui-media/pages/MediaList",
+            "path": "uni_modules/feitui-media/pages/media/list",
             "style": {
                 "navigationBarTitleText": "媒体库"
+            }
+        },{
+            "path":"uni_modules/feitui-media/pages/category/list",
+            "style": {
+                "navigationBarTitleText": "媒体分组"
             }
         },
         {
