@@ -207,7 +207,7 @@ export default {
 ## 更新计划
 + <el-checkbox :value="true">底部TabBar模块实现(2021-05-04)</el-checkbox> 
 + <el-checkbox :value="true">增加对内容管理模块的支持(2021-05-14)</el-checkbox> 
++ <el-checkbox :value="true">媒体库增加分类功能(2021-05-20)</el-checkbox>  
 + <el-checkbox :value="false">模板库</el-checkbox> 
 + <el-checkbox :value="false">可嵌套的容器模块</el-checkbox> 
-+ <el-checkbox :value="false">媒体库增加分类功能</el-checkbox> 
 + <el-checkbox :value="false">增加富文本模块</el-checkbox> 
